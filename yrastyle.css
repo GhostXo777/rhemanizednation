@@ -1,0 +1,2332 @@
+/* --- GLOBAL STYLES & SETUP --- */
+:root {
+    --primary-color: #0d1a26;   /* Deep Navy/Charcoal */
+    --accent-color: #ffc300;    /* Vibrant Gold/Yellow */
+    --light-text: #f4f4f4;      /* Off-White */
+    --dark-text: #333;          /* Dark Text */
+    --spacing-lg: 3rem;
+    --spacing-md: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+h1, h2 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #ffd747; /* Lighter gold */
+}
+
+/* --- BUTTON STYLES --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+}
+.primary-btn:hover {
+    background-color: #ffd747;
+    transform: translateY(-2px);
+    color: var(--primary-color);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 2px solid var(--light-text);
+}
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    color: var(--light-text);
+}
+
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 15px var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-text);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: var(--spacing-md);
+}
+
+.main-nav a {
+    color: var(--light-text);
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.main-nav a:hover {
+    background-color: rgba(255, 195, 0, 0.1);
+    color: var(--accent-color);
+}
+
+.donate-link a {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.donate-link a:hover {
+    background-color: #ffd747;
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- GLOBAL UTILITIES --- */
+.section-padding {
+    padding: var(--spacing-lg) 0;
+}
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+.white-text {
+    color: var(--light-text) !important;
+}
+
+
+/* 1. PROFESSIONAL ACADEMY HERO SECTION */
+.professional-hero {
+    background: var(--primary-color);
+    color: var(--light-text);
+    padding: 120px 0 80px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+.professional-hero h1 {
+    font-size: 4rem;
+    color: var(--light-text);
+    margin-bottom: 5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.professional-hero .overline-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.professional-hero .tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    opacity: 0.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admissions-cta {
+    background-color: var(--light-text);
+    color: var(--primary-color);
+    padding: 25px 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.admissions-cta p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.large-btn {
+    padding: 12px 35px;
+    font-size: 1rem;
+    margin-right: 0;
+}
+
+
+/* 2. ABOUT & COMMISSION BLOCKS */
+.academy-about-commission {
+    display: flex;
+    gap: var(--spacing-lg);
+    border-bottom: 1px solid #eee;
+}
+
+.block-about {
+    flex: 2;
+    padding-right: var(--spacing-md);
+}
+
+.block-commission {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: var(--spacing-md);
+    border-radius: 5px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.text-link {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+
+/* 3. MANDATE & MISSION GRID SECTION */
+.mandate-mission-section {
+    background-color: #f0f4f7;
+    padding: var(--spacing-lg) 0;
+}
+
+.grid-header {
+    text-align: center;
+    padding-bottom: var(--spacing-md);
+}
+.grid-header .section-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+}
+
+.content-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.content-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+/* Specific list styling for a professional look */
+.professional-list {
+    list-style: none;
+    padding: 0;
+}
+
+.professional-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.professional-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Highlight card for the Goal/Summary */
+.highlight-card {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+.highlight-card h3 {
+    color: var(--accent-color);
+    border-bottom-color: var(--light-text);
+}
+.highlight-card .professional-list li::before {
+    color: var(--accent-color);
+}
+.highlight-card p {
+    opacity: 0.9;
+}
+.highlight-card .secondary-focus {
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+
+/* 4. FINAL CALL TO ACTION */
+.professional-cta {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.cta-message {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+
+/* 5. FOOTER */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    font-size: 0.9rem;
+}
+
+.main-footer a {
+    color: #bbb;
+    margin: 0 5px;
+}
+.main-footer a:hover {
+    color: var(--accent-color);
+}
+
+
+/* 6. RESPONSIVENESS */
+@media (max-width: 1000px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 900px) {
+    /* Mobile nav setup (reusing from index.html) */
+    .main-nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+    }
+    
+    .main-nav.nav-open {
+        transform: scaleY(1);
+    }
+    .main-nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .main-nav a {
+        display: block;
+        padding: 15px 20px;
+    }
+    .nav-toggle {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .academy-about-commission, .grid-container {
+        flex-direction: column;
+        display: flex;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .admissions-cta {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    .admissions-cta p {
+        margin-bottom: 0;
+    }
+    .professional-hero h1 {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 600px) {
+    .professional-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+/* --- FORM PAGE STYLING --- */
+
+.form-page-main {
+    background-color: #f0f4f7; /* Same light background as mandate section */
+    padding: var(--spacing-lg) 0;
+}
+
+.form-wrapper {
+    background-color: #fff;
+    padding: var(--spacing-lg);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Constrain the form width for readability */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Form Header Styling */
+.form-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid #eee;
+}
+
+.form-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.form-note {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Fieldset and Legend Styling (Sections) */
+.academy-form fieldset {
+    border: 1px solid #ddd;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: 6px;
+}
+
+.academy-form legend {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    padding: 0 10px;
+    border-bottom: none;
+}
+
+/* Form Group Styling (Label and Input) */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.academy-form label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--dark-text);
+}
+
+.academy-form input[type="text"],
+.academy-form input[type="email"],
+.academy-form input[type="tel"],
+.academy-form input[type="date"],
+.academy-form select,
+.academy-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.academy-form input:focus,
+.academy-form select:focus,
+.academy-form textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255, 195, 0, 0.5);
+    outline: none;
+}
+
+.academy-form textarea {
+    resize: vertical;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Mobile Form Layout */
+@media (max-width: 600px) {
+    .form-wrapper {
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .form-header h1 {
+        font-size: 2rem;
+    }
+    
+    .academy-form legend {
+        font-size: 1.2rem;
+    }
+} 
+
+/* --- CONTACT PAGE STYLING --- */
+
+.contact-page-main {
+    background-color: var(--light-text);
+    padding: var(--spacing-lg) 0;
+}
+
+/* Two-Column Grid for Form and Info */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Form is 2/3 width, Info is 1/3 width */
+    gap: var(--spacing-lg);
+    align-items: flex-start; /* Aligns content to the top */
+    max-width: 1000px;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-container h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.general-contact-form .form-group {
+    /* Reuses form-group styles from the application form */
+    margin-bottom: 20px;
+}
+
+.general-contact-form input[type="text"],
+.general-contact-form input[type="email"],
+.general-contact-form textarea {
+    /* Reuses input styles from the application form */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Contact Info Card */
+.contact-info-card {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info-card h2 {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.info-group {
+    margin-bottom: 30px;
+}
+
+.info-group h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.info-group p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 180px;
+    background-color: #1a2d40; /* Darker navy for map area */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+    margin-top: 20px;
+    border: 1px dashed #444;
+}
+
+/* Contact Page Mobile Responsiveness */
+@media (max-width: 850px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack columns on tablets/mobile */
+        gap: var(--spacing-md);
+    }
+
+    .contact-form-container {
+        order: 2; /* Put the form below the info card on mobile */
+    }
+
+    .contact-info-card {
+        order: 1; /* Put the info card at the top on mobile */
+    }
+}
+/* --- ENHANCED MEDIA LIBRARY STYLING (V2) --- */
+
+.media-page-main-v2 {
+    padding: 60px 0;
+    background-color: #ffffff; /* Use pure white for a cleaner look */
+}
+
+.media-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.media-intro h1 {
+    color: var(--primary-color);
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    font-weight: 800;
+}
+.media-intro p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+.section-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.separator {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 40px 0;
+}
+
+/* 1. Filter and Search Control Panel */
+.media-control-panel {
+    background-color: #f0f4f7;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.filter-controls {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.filter-controls select, .search-input {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.filter-controls select {
+    flex: 1;
+}
+.search-input {
+    flex: 2;
+}
+
+
+/* 2. Featured Sermon Block (New Design) */
+.featured-message-block {
+    margin-bottom: 60px;
+}
+
+.featured-card-v2 {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    transition: box-shadow 0.3s ease;
+}
+.featured-card-v2:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.featured-media-area {
+    flex: 3; /* Takes up 3/5 of the space */
+    position: relative;
+    background-color: var(--primary-color);
+    min-height: 350px;
+}
+
+.video-placeholder-v2 {
+    width: 100%;
+    height: 100%;
+    /* In a real site, this would contain the embedded iframe */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('featured-sermon-bg.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.media-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 0 0 5px 0;
+}
+
+
+.featured-content-details {
+    flex: 2; /* Takes up 2/5 of the space */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+.meta-data {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+.featured-content-details p {
+    margin-bottom: 30px;
+}
+
+.btn-small {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+
+/* 3. Media Grid (The Library) */
+.media-library-grid {
+    padding-bottom: 50px;
+}
+
+.sermon-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.sermon-card-v2 {
+    background-color: #f7f7f7; /* Slight off-white background */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sermon-card-v2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sermon-thumbnail-v2 {
+    width: 100%;
+    height: 200px;
+    background-color: var(--primary-color);
+    /* Placeholder for actual thumbnail image */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.sermon-details-v2 {
+    padding: 20px;
+}
+
+.sermon-details-v2 h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.sermon-details-v2 .meta-data {
+    font-size: 0.8rem;
+    color: #1f0e0e;
+    margin-bottom: 15px;
+}
+
+.load-more-v2 {
+    color: #000;
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+
+/* Media Page Mobile Responsiveness */
+@media (max-width: 950px) {
+    .featured-card-v2 {
+        flex-direction: column;
+    }
+    .featured-media-area {
+        min-height: 250px;
+    }
+    .featured-content-details {
+        padding: 30px;
+    }
+    .message-title {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width: 768px) {
+    .media-intro h1 {
+        font-size: 2.5rem;
+    }
+    .filter-controls {
+        flex-direction: column;
+    }
+    .sermon-grid-v2 {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- FIX: Ensures all images inside the thumbnail containers scale correctly --- */
+.thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes sure the image covers the entire area without distortion */
+    display: block; /* Removes any extra spacing issues */
+}
+
+
+
+
+/* --- PAGE UNDER CONSTRUCTION STYLING --- */
+
+/* Keyframe for the rotation animation */
+@keyframes gear-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.construction-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.construction-main {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: var(--spacing-lg);
+}
+
+/* ... (Rest of the construction-content, h1, h2, p styles) ... */
+
+.gear-icon {
+    position: relative;
+    width: 100px; 
+    height: 100px;
+    margin: 0 auto 30px;
+}
+
+.gear {
+    position: absolute;
+    font-size: 4rem; 
+    color: var(--primary-color);
+}
+
+.gear-one {
+    top: 0;
+    left: 0;
+    animation: gear-spin 8s linear infinite;
+}
+
+.gear-two {
+    bottom: 0;
+    right: 0;
+    font-size: 3rem; 
+    color: var(--accent-color);
+    animation: gear-spin 6s linear infinite reverse;
+}
+
+/* --- ABOUT US PAGE STYLING --- */
+
+.about-page-main {
+    padding: 0 0 60px 0;
+    background-color: var(--light-text);
+}
+
+/* 1. HERO INTRO SECTION */
+.about-hero {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.about-hero .tagline-mission {
+    font-size: 1.4rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+.about-hero .overline-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* 2. FOUNDATIONAL & GOAL SECTION */
+.foundational-section {
+    padding: 60px 0;
+    display: flex;
+    gap: var(--spacing-lg);
+    border-bottom: 1px solid #ddd;
+}
+.section-column {
+    padding: 0 var(--spacing-md);
+}
+.wide-column {
+    flex: 2;
+}
+.narrow-column {
+    flex: 1;
+}
+
+.large-text-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.goal-card {
+    background-color: #f0f4f7;
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    border-left: 5px solid var(--accent-color);
+}
+.goal-card .card-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* 3. VISION & COMMISSION SECTION */
+.vision-commission-section {
+    background-color: var(--primary-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: 40px;
+}
+
+.vision-point {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle transparent white */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icon-circle {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.vision-point h3 {
+    color: var(--light-text);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.vision-point p {
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+/* 4. WHAT WE DO & AIM */
+.what-we-do-aim {
+    padding: 60px 0;
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.what-we-do-block {
+    flex: 1;
+    border-right: 1px solid #ddd;
+    padding-right: var(--spacing-lg);
+}
+
+.aim-block {
+    flex: 1;
+}
+
+.aim-list {
+    list-style: none;
+    padding: 0;
+}
+.aim-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+.aim-list li::before {
+    content: '★'; /* A star emoji for visual interest */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    top: 5px;
+}
+
+/* 5. TENANTS OF MINISTRY (The Pillars) */
+.tenants-section {
+    padding: 40px 0 80px 0;
+    background-color: #f0f4f7;
+    text-align: center;
+}
+.tenants-section .section-title {
+    margin-bottom: 10px;
+}
+.subtitle-center {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.tenants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto 40px;
+}
+
+.tenant-item {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+    text-align: left;
+    border-left: 4px solid transparent;
+}
+.tenant-item:hover {
+    background-color: #fff3c9;
+    border-left-color: var(--accent-color);
+}
+
+.cta-banner {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--accent-color);
+}
+.cta-banner p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+
+/* Media Queries for About Page */
+@media (max-width: 900px) {
+    .foundational-section, .what-we-do-aim {
+        flex-direction: column;
+    }
+    .what-we-do-block {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-right: 0;
+        padding-bottom: var(--spacing-lg);
+    }
+    .about-hero h1 {
+        font-size: 3rem;
+    }
+    .cta-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .cta-banner p {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 600px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- GLOBAL STYLES & SETUP --- */
+:root {
+    --primary-color: #0d1a26;   /* Deep Navy/Charcoal */
+    --accent-color: #ffc300;    /* Vibrant Gold/Yellow */
+    --light-text: #f4f4f4;      /* Off-White */
+    --dark-text: #333;          /* Dark Text */
+    --spacing-lg: 3rem;
+    --spacing-md: 1.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-text);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+h1, h2 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #ffd747; /* Lighter gold */
+}
+
+/* --- BUTTON STYLES --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-right: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+}
+.primary-btn:hover {
+    background-color: #ffd747;
+    transform: translateY(-2px);
+    color: var(--primary-color);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--light-text);
+    border: 2px solid var(--light-text);
+}
+.secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    color: var(--light-text);
+}
+
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 15px var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-text);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: var(--spacing-md);
+}
+
+.main-nav a {
+    color: var(--light-text);
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.main-nav a:hover {
+    background-color: rgba(255, 195, 0, 0.1);
+    color: var(--accent-color);
+}
+
+.donate-link a {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+.donate-link a:hover {
+    background-color: #ffd747;
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* --- HERO SECTION --- */
+.hero-section {
+    height: 70vh; /* Shorter than a splash page, but still impactful */
+    background: linear-gradient(rgba(13, 26, 38, 0.7), rgba(13, 26, 38, 0.7)), url('church-revival-bg.jpg') center/cover no-repeat;
+    /* ! IMPORTANT: Replace 'church-revival-bg.jpg' with a high-quality relevant image */
+    color: var(--light-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 var(--spacing-md);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+
+/* --- MISSION SECTION --- */
+.mission-section {
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.mission-section h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.mission-cards {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+.card {
+    flex: 1;
+    max-width: 350px;
+    background-color: #fff;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card .icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+
+/* --- CALLOUT SECTION --- */
+.callout-section {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-lg);
+}
+
+.callout-section h2 {
+    color: var(--light-text);
+    font-size: 2rem;
+}
+
+.callout-section p {
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+}
+
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #bbb;
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    font-size: 0.9rem;
+}
+
+.main-footer a {
+    color: #bbb;
+    margin: 0 5px;
+}
+.main-footer a:hover {
+    color: var(--accent-color);
+}
+
+
+/* --- MOBILE RESPONSIVENESS (Media Queries) --- */
+@media (max-width: 900px) {
+    .main-nav {
+        /* Mobile menu starts hidden */
+        position: absolute;
+        top: 60px; /* Below the header */
+        right: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: scaleY(0); /* Collapse menu */
+        transform-origin: top;
+        transition: transform 0.3s ease;
+    }
+    
+    .main-nav.nav-open {
+        transform: scaleY(1); /* Expand menu when active */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 15px 20px;
+    }
+    
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .mission-cards {
+        flex-direction: column; /* Stack cards vertically on small phones */
+    }
+    
+    .card {
+        max-width: 100%;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        display: block; /* Stack buttons vertically */
+        margin: 10px auto;
+    }
+}
+
+
+
+/* --- EVENTS & SCHEDULE PAGE STYLING --- */
+
+.events-page-main {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+}
+
+.events-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.events-header h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.events-header .overline-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 1. MAJOR EVENTS CARDS */
+.major-events-section {
+    padding-bottom: 60px;
+}
+.event-card-large {
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: transform 0.3s;
+}
+.event-card-large:hover {
+    transform: translateY(-5px);
+}
+
+.event-card-large.reverse {
+    flex-direction: row-reverse;
+}
+
+.event-image-area {
+    flex: 2;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
+.event-card-large:hover .event-thumbnail {
+    transform: scale(1.05);
+}
+
+.event-details {
+    flex: 3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.event-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.95rem;
+    color: #888;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+.event-meta .meta-item {
+    font-weight: 600;
+}
+
+.event-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+.badge-prayer {
+    background-color: var(--accent-color); /* Gold */
+}
+.badge-retreat {
+    background-color: #fce4ec; /* Light pink/mauve for a soft retreat feel */
+    color: #c2185b;
+}
+
+
+/* 2. WEEKLY SCHEDULE */
+.service-schedule-section {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: 30px;
+}
+
+.schedule-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.schedule-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.schedule-card h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.schedule-card p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+.schedule-card .detail {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #999;
+    margin-top: 10px;
+}
+
+.cta-events {
+    margin-top: 50px;
+    padding: 30px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.cta-events p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+
+/* Events Page Mobile Responsiveness */
+@media (max-width: 900px) {
+    .event-card-large {
+        flex-direction: column;
+    }
+    .event-card-large.reverse {
+        flex-direction: column;
+    }
+    .event-image-area {
+        min-height: 250px;
+    }
+}
+@media (max-width: 600px) {
+    .events-header h1 {
+        font-size: 2.5rem;
+    }
+    .event-details {
+        padding: 30px;
+    }
+    .event-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .cta-events {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* --- HOME PAGE EVENTS CTA BANNER STYLING --- */
+
+.home-events-cta-banner {
+    background-color: var(--primary-color); /* Navy background */
+    padding: 50px 0;
+    margin: 40px 0; /* Add margin above and below to separate it */
+}
+
+.cta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.cta-content h2 {
+    color: var(--accent-color); /* Gold heading */
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.cta-content p {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 600px;
+}
+
+.cta-button {
+    flex-shrink: 0; /* Prevents the button from shrinking on large screens */
+    padding: 15px 30px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .cta-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cta-content {
+        margin-bottom: 20px;
+    }
+    .cta-button {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* --- GIVE ONLINE PAGE STYLING --- */
+
+.give-page-main {
+    padding: 60px 0;
+    background-color: #f7f7f7;
+}
+
+/* Hero Section */
+.give-hero {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+.give-hero h1 {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.give-hero p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 2. Giving Options Grid */
+.giving-options-section {
+    padding: 40px 0;
+}
+.giving-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: 30px;
+}
+
+.giving-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+.giving-card:hover {
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+.giving-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.giving-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Bank Transfer Specific Styling */
+.bank-transfer-card {
+    border: 1px solid #ddd;
+}
+.account-details-box {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.detail-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0;
+}
+.detail-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.account-number {
+    font-family: monospace;
+    letter-spacing: 1px;
+}
+.copy-btn {
+    
+    background-color: var(--primary-color); 
+    color: var(--light-text); 
+    padding: 10px 20px; 
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    display: inline-block;
+    
+    /* Overrides the default secondary-btn style */
+    text-decoration: none;
+}
+
+.copy-btn:hover {
+    /* Lighten slightly on hover for feedback */
+    background-color: #1a426e; 
+    opacity: 0.9;
+}
+.note {
+    font-size: 0.85rem;
+    color: #bb5151;
+}
+
+/* --- ONLINE PAYMENT GATEWAY BUTTON STYLING --- */
+
+.payment-gateway-buttons {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.payment-gateway-buttons p {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.gateway-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: block; /* Make buttons full width */
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Paystack Button - Use Primary/Navy */
+.paystack-btn {
+    /* Uses the existing primary-btn style */
+}
+
+/* Flutterwave Button - Use Accent/Gold to distinguish */
+.flutterwave-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
+}
+.flutterwave-btn:hover {
+    background-color: #ffda6a; /* Lighter gold on hover */
+}
+
+/* Ensure form container doesn't have old placeholder styling */
+.paystack-integration-placeholder {
+    /* Ensure this is removed or overridden if it exists in your CSS */
+    display: none; 
+}
+
+
+/* Give Page Mobile Responsiveness */
+@media (max-width: 900px) {
+    .giving-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 600px) {
+    .give-hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- PARTNERSHIP CTA STYLING (For give.html) --- */
+
+.partnership-cta {
+    background-color: var(--primary-color); /* Navy Background */
+    color: var(--light-text);
+    padding: 30px 40px;
+    border-radius: 10px;
+    margin: 40px auto 30px auto; /* Provides good spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--accent-color); /* Gold Border for prominence */
+}
+
+.partnership-cta .cta-content h2 {
+    color: var(--light-text); /* White/light text for contrast */
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.partnership-cta .cta-content p {
+    color: #ccc; /* Slightly greyed-out text */
+    font-size: 1rem;
+    margin: 0;
+}
+
+.partnership-btn {
+    /* Styles the button using the secondary button class but ensures it's prominent */
+    background-color: var(--accent-color); /* Gold Button */
+    color: var(--primary-color); /* Navy Text on Gold */
+    font-weight: 700;
+    border: none;
+    padding: 12px 25px;
+}
+
+.partnership-btn:hover {
+    background-color: #ffda6a; /* Lighter Gold on hover */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .partnership-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+    .partnership-cta .cta-content {
+        margin-bottom: 20px;
+    }
+    .partnership-btn {
+        width: 100%;
+    }
+}
+
+/* --- PARTNER PAGE STYLING --- */
+
+.partner-page-main {
+    padding: 0 0 80px 0;
+    background-color: #f7f7f7;
+}
+
+/* Hero Section */
+.partner-hero {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.partner-hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+.partner-hero .tagline-mission {
+    font-size: 1.25rem;
+    font-weight: 300;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.partner-hero .overline-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ccc;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* 2. Partnership Pillars */
+.partnership-pillars-section {
+    padding: 40px 0;
+}
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: 40px;
+}
+.pillar-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border-top: 5px solid var(--accent-color);
+}
+.pillar-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.pillar-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+.pillar-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* 3. Inquiry Form Section */
+.partner-inquiry-section {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: 60px;
+}
+.inquiry-box {
+    flex: 2;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.inquiry-assurance {
+    flex: 1;
+    background-color: #e6eef4; /* Light blue/grey background */
+    padding: 30px;
+    border-radius: 10px;
+    align-self: flex-start; /* Aligns to the top */
+}
+.inquiry-assurance h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.form-instruction {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 15px;
+}
+
+/* Partner Form Styles (Reusing general form styles, but refining) */
+.partner-form .form-group {
+    margin-bottom: 20px;
+}
+.partner-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+.partner-form input[type="text"],
+.partner-form input[type="email"],
+.partner-form select,
+.partner-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .partner-hero h1 {
+        font-size: 3rem;
+    }
+    .partner-inquiry-section {
+        flex-direction: column;
+    }
+    .inquiry-assurance {
+        order: 1; /* Puts assurance section before form on mobile */
+    }
+    .inquiry-box {
+        order: 2;
+    }
+}
+
+/* --- ADMINISTRATOR PAGE STYLING --- */
+
+.admin-page-main {
+    padding: 0 0 80px 0;
+    background-color: #fff;
+}
+
+/* Hero Section */
+.admin-hero {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 60px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.admin-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+.admin-hero .tagline-mission {
+    font-size: 1.1rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.admin-hero .overline-text {
+    font-size: 0.9rem;
+    color: #ccc;
+    letter-spacing: 2px;
+}
+
+/* Administrator Profiles */
+.admin-profiles-section {
+    display: grid;
+    /* Creates a 3-column layout on large screens */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.admin-profile-card {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.admin-profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admin-image-space {
+    height: 350px; /* Consistent height for images */
+    background-color: #eee; /* Placeholder background */
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    /* Placeholder styles for when images are added */
+}
+/* Style the image placeholder tag for visibility */
+.admin-image-space [src^="[Image"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+    color: #999;
+}
+
+
+.admin-details {
+    padding: 0 20px;
+}
+
+.admin-name {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.admin-title {
+    font-size: 1rem;
+    color: #000(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.admin-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.admin-quote {
+    background-color: #e6eef4; /* Light contrast color */
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
+.admin-quote p {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .admin-hero h1 {
+        font-size: 2.5rem;
+    }
+    .admin-profiles-section {
+        grid-template-columns: 1fr;
+    }
+    .admin-image-space {
+        height: 300px;
+    }
+}
+/* Administrator Profiles */
+/* ... (existing admin-profiles-section and admin-profile-card styles) ... */
+
+.admin-image-space {
+    height: 350px; /* This sets the height of the container */
+    background-color: #eee;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 🚨 CRITICAL FIX: Ensures the image focuses on the head/top 🚨 */
+.admin-image-space .admin-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top; 
+    display: block;
+}
+
+/* --- ADMIN SOCIAL LINKS STYLING & ANIMATION --- */
+
+.admin-social-links {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem; /* Makes the emoji/icon stand out */
+    text-decoration: none;
+    border-radius: 50%; /* Makes the icons circular */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color); /* Navy text color */
+}
+
+/* Hover Animation: Small scaling effect */
+.social-icon:hover {
+    transform: scale(1.15) rotate(5deg); /* Subtle spin/scale effect */
+    background-color: var(--accent-color); /* Gold background on hover */
+    border-color: var(--accent-color);
+    color: var(--primary-color); /* Ensures navy icon text stays legible */
+}
+
+/* Specific color hints for brand recognition */
+.facebook-link {
+    /* If you were using true icons, you'd apply blue here. */
+    /* For now, we use Navy border for brand consistency */
+}
+.instagram-link {
+    /* If you were using true icons, you'd apply gradient/specific color here. */
+    /* For now, we use Navy border for brand consistency */
+}

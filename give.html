@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give Online | Partner with Rhemanized Nation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="yrastyle.css"> 
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">Rhemanized Nation</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
+    </header>
+
+    <main class="give-page-main">
+        <div class="container">
+
+            <section class="give-hero">
+                <h1>Sow a Seed, Fuel Our Movement.</h1>
+                <p>Your partnership enables us to equip the next generation of revivalists and advance the gospel globally.</p>
+            </section>
+            
+            <hr class="separator">
+
+            <section class="giving-options-section">
+                <h2 class="section-title text-center">Choose Your Method</h2>
+                
+                <div class="giving-grid">
+                    
+                    <div class="giving-card bank-transfer-card">
+                        <div class="card-icon">&#127974;</div>
+                        <h3>Bank Transfer (Local)</h3>
+                        <p>The simplest way to give tithes and offerings directly from your local bank account.</p>
+                        
+                        <div class="account-details-box">
+                            <p class="detail-label">Bank Name:</p>
+                            <p class="detail-value">Frist City Monument Bank</p>
+                            
+                            <p class="detail-label">Account Number:</p>
+                            <p class="detail-value account-number">7-3-9-4-5-3-2-0-1-1</p>
+                            
+                            <p class="detail-label">Account Name:</p>
+                            <p class="detail-value">Rhemanized Nation Association</p>
+                            
+                            <button class="btn secondary-btn copy-btn" data-account="7394532011">Copy Account No.</button>
+                        </div>
+                        <p class="note">Please specify the purpose (Tithe, Offering, etc.) in your transfer narration.</p>
+                    </div>
+
+                    <div class="giving-card online-payment-card">
+    <div class="card-icon">&#128181;</div>
+    <h3>Online Payment (Card/Digital)</h3>
+    <p>Securely give using your local or international debit/credit card, bank transfer, or digital wallets.</p>
+    
+    <div class="giving-form-container">
+        <h4>Designate Your Seed:</h4>
+        <select id="fund-purpose" class="fund-select">
+            <option value="tithe">Tithe / General Offering</option>
+            <option value="yra">YRA Scholarship Fund</option>
+            <option value="missions">Global Missions & Outreach</option>
+        </select>
+
+        <div class="payment-gateway-buttons">
+            <p>Pay Securely Via:</p>
+            
+            <a href="#" class="btn primary-btn gateway-btn paystack-btn">Paystack Payment</a>
+            
+            <a href="#" class="btn secondary-btn gateway-btn flutterwave-btn">Flutterwave Payment</a>
+
+        </div>
+    </div>
+    <p class="security-note">Transactions are secured and processed by Paystack and Flutterwave.</p>
+</div>
+                </div>
+            </section>
+            
+            <hr class="separator">
+
+            <section class="impact-section">
+                <h2 class="section-title text-center">Your Seed's Impact</h2>
+                <div class="impact-grid">
+                    <div class="impact-point">
+                        <div class="impact-icon">&#128170;</div>
+                        <h4>Equipping Revivalists</h4>
+                        <p>Funding the curriculum, resources, and free tuition for students in the Young Revivalist Academy.</p>
+                    </div>
+                    <div class="impact-point">
+                        <div class="impact-icon">&#127760;</div>
+                        <h4>Global Apostolic Reach</h4>
+                        <p>Supporting missionaries, gospel film production, and our Outreach Networks across nations.</p>
+                    </div>
+                <section class="partnership-cta">
+                <div class="cta-content">
+                    <h1>For Larger Donations & Strategic Partnership</h1>
+                    <p>Interested in making a significant investment in the revival movement or exploring long-term ministry partnership opportunities?</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="partner.html" class="btn secondary-btn large-btn partnership-btn">Contact Partnership Team &rarr;</a>
+                </div>
+            </section>
+            
+            <hr class="separator">
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Rhemanized Nation. All Rights Reserved.</p>
+       
+        </div>div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100083286851741">Facebook</a> | 
+            <a href="https://www.instagram.com/lvc_media?igsh=Y2lybGQzMm15NHc=">Instagram</a> |
+            <a href="https://youtube.com/@lvcmedia2971?si=y_WdO7mh-LOiVy3A">YouTube</a>|
+            <a href="t.me/RhemanizedMedia">Telegram</a>
+        </div>
+    </footer>
+    
+    <script>
+        const copyButton = document.querySelector('.copy-btn');
+        if (copyButton) {
+            copyButton.addEventListener('click', function() {
+                const accountNumber = this.getAttribute('data-account');
+                navigator.clipboard.writeText(accountNumber)
+                    .then(() => {
+                        this.textContent = 'Copied!';
+                        setTimeout(() => {
+                            this.textContent = 'Copy Account No.';
+                        }, 2000);
+                    })
+                    .catch(err => {
+                        console.error('Could not copy text: ', err);
+                    });
+            });
+        }
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('nav-open');
+        });
+    </script>
+
+</body>
+</html>

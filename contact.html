@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Rhemanized Nation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="yrastyle.css"> 
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">Rhemanized Nation</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="youngrevivalist.html">Academy</a></li>
+                <li><a href="20 Adeyemi Oshodi Lagos">Location</a></li>
+                <li class="donate-link"><a href="give.html">Give Online</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
+    </header>
+
+    <main class="contact-page-main">
+        <div class="container contact-grid">
+
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h1>Get In Touch</h1>
+                    <p>Have a question about the academy, events, or mentorship enquiry  Send us a message!</p>
+                </div>
+
+                <form action="mailto:youngrevivalistacademy01@gmail.com?subject=Website%20Inquiry" method="POST" enctype="text/plain" class="general-contact-form">
+                    
+                    <div class="form-group">
+                        <label for="contact-name">Your Full Name *</label>
+                        <input type="text" id="contact-name" name="contactName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Email Address *</label>
+                        <input type="email" id="contact-email" name="contactEmail" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <input type="text" id="contact-subject" name="contactSubject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Your Message *</label>
+                        <textarea id="contact-message" name="contactMessage" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn primary-btn large-btn submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-card">
+                <h2>Our Details</h2>
+                
+                <div class="info-group">
+                    <h3>&#9993; Email</h3>
+                    <p>youngrevivalistacademy01@gmail.com</p>
+                    <p>youngrevivalistacademy01@gmail.com (for YRA)</p>
+                </div>
+                
+                <div class="info-group">
+                    <h3>&#9742; Phone</h3>
+                    <p>+234 814 575 3104(General Inquiries)</p>
+                    <p>+234 809 492 9003(Academy Inquiries)</p>
+                </div>
+                
+                <div class="info-group">
+                    <h3>&#128205; Location</h3>
+                    <p>Rhemanized Nation Headquarters</p>
+                    <p>20 Adeyemi Oshodi, Lagos, Nigeria</p>
+                </div>
+
+                <div id="map" class="map-placeholder">
+                    <p>Map Placeholder</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Rhemanized Nation. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100083286851741">Facebook</a> | 
+            <a href="https://www.instagram.com/lvc_media?igsh=Y2lybGQzMm15NHc=">Instagram</a> |
+            <a href="https://youtube.com/@lvcmedia2971?si=y_WdO7mh-LOiVy3A">YouTube</a> |
+            <a href="http://t.me/RhemanizedMedia">Telegram</a>
+        </div>
+    </footer>
+    
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('nav-open');
+        });
+    </script>
+
+</body>
+</html>

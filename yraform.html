@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YRA Application Form | Enroll Today</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="yrastyle.css"> 
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo">Rhemanized Nation</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="youngrevivalist.html">Academy Info</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="donate-link"><a href="give.html">Give Online</a></li>
+            </ul>
+        </nav>
+        <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
+    </header>
+
+    <main class="form-page-main">
+        <div class="container form-wrapper">
+
+            <div class="form-header">
+                <h1>Young Revivalist Academy Application</h1>
+                <p>Welcome, future revivalist! Please fill out the form below carefully to enroll in the *Foundational Class*.</p>
+                <p class="form-note">Admission is **FREE. All fields marked with an asterisk () are required.</p>
+            </div>
+            
+            <form action="mailto:youngrevivalistaacademy@gmail.com?subject=YRA%20Foundational%20Class%20Application" 
+                  method="POST" 
+                  enctype="text/plain" 
+                  class="academy-form">
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" name="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date-of-birth">Date of Birth *</label>
+                        <input type="date" id="date-of-birth" name="dateOfBirth" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="prefer_not_to_say">Prefer not to say</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contact Details</legend>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="e.g., +234 801 234 5678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city-country">City & Country of Residence *</label>
+                        <input type="text" id="city-country" name="cityCountry" required>
+                    </div>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Your Calling</legend>
+
+                    <div class="form-group">
+                        <label for="church">Current Church Denomination/Ministry (Optional)</label>
+                        <input type="text" id="church" name="church">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motivation">Why do you want to join the Young Revivalist Academy? *</label>
+                        <textarea id="motivation" name="motivation" rows="5" required placeholder="Briefly share your passion for Christ and your desire for revival."></textarea>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">I agree to dedicate time to the Academy's curriculum and follow its core values. *</label>
+                    </div>
+                </fieldset>
+                
+                <button type="submit" class="btn primary-btn large-btn submit-btn">Submit Application</button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Rhemanized Nation. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100083286851741">Facebook</a> | 
+            <a href="https://www.instagram.com/lvc_media?igsh=Y2lybGQzMm15NHc=">Instagram</a> |
+            <a href="https://youtube.com/@lvcmedia2971?si=y_WdO7mh-LOiVy3A">YouTube</a> |
+            <a href="http://t.me/RhemanizedMedia">Telegram</a>
+        </div>
+    </footer>
+    
+    <script>
+        const navToggle = document.querySelector('.nav-toggle');
+        const mainNav = document.querySelector('.main-nav');
+
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('nav-open');
+        });
+    </script>
+
+</body>
+</html>
